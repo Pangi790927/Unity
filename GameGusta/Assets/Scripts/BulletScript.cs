@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour {
+	private const float SpeedThreshold = 20;
+
 	static int count = 0; // should it be atomic? 
 		
 	public int maxCount;
@@ -19,6 +21,9 @@ public class BulletScript : MonoBehaviour {
 		if (id < count - maxCount) {
 			Destroy(gameObject);
 		}
+		// if (GetComponent<Rigidbody>().velocity.sqrMagnitude < SpeedThreshold * SpeedThreshold) {
+		// 	GetComponent<Light>().enabled = false;
+		// }
 	}
 
 	void OnCollisionEnter() {
