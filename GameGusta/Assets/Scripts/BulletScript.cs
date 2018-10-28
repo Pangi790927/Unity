@@ -20,4 +20,8 @@ public class BulletScript : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+
+	void OnCollisionEnter() {
+		GetComponent<Rigidbody>().velocity /= 2;
+	}
 }

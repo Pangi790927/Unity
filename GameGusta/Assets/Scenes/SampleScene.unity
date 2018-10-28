@@ -220,7 +220,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_Name
-      value: player (3)
+      value: wall1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_LocalScale.z
@@ -274,7 +274,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_Name
-      value: player (6)
+      value: wall6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_LocalScale.z
@@ -319,8 +319,9 @@ MonoBehaviour:
   speed: 100
   speedMult: 2
   rotSpeed: 115
-  camera: {fileID: 534669904}
+  cam: {fileID: 534669904}
   bullet: {fileID: 54699392535130500, guid: 4f72e49f81712d749aecfa797837ff9b, type: 2}
+  gunSpread: 2
 --- !u!54 &283300915
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -441,7 +442,6 @@ MonoBehaviour:
   player: {fileID: 283300913}
   offset: {x: 0, y: 20, z: -6}
   cameraRotateSpeed: 110
-  cameraTransitionSpeed: 10
 --- !u!1001 &733265624
 Prefab:
   m_ObjectHideFlags: 0
@@ -483,7 +483,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_Name
-      value: player (4)
+      value: wall4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_LocalScale.z
@@ -626,7 +626,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_Name
-      value: player (2)
+      value: wall2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_LocalScale.z
@@ -680,7 +680,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_Name
-      value: player (5)
+      value: wall5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_LocalScale.z
@@ -742,11 +742,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_Name
-      value: box1 (1)
+      value: ground
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_LocalScale.z
-      value: -0.14428
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_LocalScale.y
@@ -888,7 +888,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_Name
-      value: player (1)
+      value: wall3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d079e85887438c54aade188977d42b75, type: 3}
       propertyPath: m_LocalScale.z

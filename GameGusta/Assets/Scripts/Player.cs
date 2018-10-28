@@ -13,15 +13,14 @@ public class Player : MonoBehaviour {
 	public float rotSpeed;
 	public Camera cam;
 	public Rigidbody bullet;
+	public float gunSpread;
 
 	private bool onGround = true;
 
-	// Use this for initialization
 	void Start () {
 		
 	}
 
-	// Update is called once per frame
 	void Update () {
 		bool runs = false;
 		bool jumps = false;
@@ -39,7 +38,7 @@ public class Player : MonoBehaviour {
 			Shoot();
 	}
 
-	void OnCollisionEnter(/* Collision collision */) {
+	void OnCollisionEnter() {
 		onGround = true;
 	}
 
@@ -52,9 +51,16 @@ public class Player : MonoBehaviour {
 	}
 
 	void Shoot() {
+        // random var 3 must be modifyed to mean the distance from the player at wich the bullet
+        // must spawn
+        System.Random randFloat = new System.Random();
+		Quaternion randRot = Quaternion.Euler(
+				(float)randFloat.NextDouble() * gunSpread,
+				(float)randFloat.NextDouble() * gunSpread,
+				(float)randFloat.NextDouble() * gunSpread);
 		var instance = Instantiate(bullet, transform.position + transform.forward * 3,
 					transform.rotation);
-		instance.velocity = BulletSpeed * transform.forward;
+		instance.velocity = BulletSpeed * (randRot * transform.forward);
 	}
 
 	void VelocityUpdate(bool runs, bool jumps) {
@@ -78,7 +84,6 @@ public class Player : MonoBehaviour {
 		RaycastHit hit = new RaycastHit();
 		var ray = cam.ScreenPointToRay(Input.mousePosition);
 		if (Physics.Raycast(ray.origin, ray.direction, out hit, maxDistance: MaxRayDistance)) {
-			// Debug.DrawLine(transform.position, hit.point);
 			var desired = Quaternion.LookRotation((hit.point - transform.position).normalized);
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, desired, 
 							rotSpeed * Time.deltaTime);
